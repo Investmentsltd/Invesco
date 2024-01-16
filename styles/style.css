@@ -231,7 +231,7 @@ nav ul li a:hover{
 
 .container6 .text .subtext{
   font-size: 17px;
-  color: rgba(34, 34, 34, 0.965);
+  color: rgba(255, 255, 255, 0.965);
   font-weight: bold;
   line-height: 1.7rem;
   letter-spacing: 0rem;
@@ -239,7 +239,7 @@ nav ul li a:hover{
 }
 
 .container6 .text .subtext p{
-  color: white;
+  color: rgb(239, 168, 37);
 }
 
 .container7{
