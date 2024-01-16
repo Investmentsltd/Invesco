@@ -235,7 +235,6 @@ nav ul li a:hover{
 .container6 .text .subtext{
   font-size: 17px;
   color: rgba(255, 255, 255, 0.965);
-  font-weight: bold;
   line-height: 1.7rem;
   letter-spacing: 0rem;
   padding: 1rem;
@@ -243,6 +242,7 @@ nav ul li a:hover{
 
 .container6 .text .subtext p{
   color: rgb(239, 168, 37);
+  font-weight: bold;
 }
 
 .container7{
@@ -360,6 +360,64 @@ nav ul li a:hover{
   border-color:  #1929649f;
   border-radius: 20rem;
   background-color: #1929649f;
+  padding: 0.7rem 1.7rem;
+}
+
+.container8{
+  background-color: white;
+}
+
+@media  screen and (min-width: 350px) and (max-width: 850px){
+  .container8 .text{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.container8 .text{
+  text-align: center;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container8 .text .subtext{
+  padding: 2rem;
+}
+
+.container8 .text img{
+  width: 7rem;
+  background-color: white;
+}
+
+.container9{
+
+}
+
+.container9 .text{
+  padding: 3rem;
+}
+
+.container9 .text .headtext{
+  font-weight: bold;
+  font-size: 20px;
+  font-style: initial;
+  color: white;
+
+}
+
+.container9 .text p{
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.552);
+  font-size: 12px;
+}
+
+.container9 .text button{
+  color: #192964;
+  border-style: solid;
+  border-width: 2px;
+  border-color:  #192964;
+  border-radius: 20rem;
   padding: 0.7rem 1.7rem;
 }
 
