@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins" sans-serif;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 @media  screen and (min-width: 350px) and (max-width: 850px){
@@ -13,10 +14,13 @@ body{
   background: linear-gradient(188deg, rgba(14, 61, 231, 0.527) 0.5%, rgba(6, 27, 101, 0.7) 99.96%);
   width: 100%;
   height: 100%;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 header{
   background: linear-gradient(188deg, rgba(16, 43, 152, 0.601).5%, rgba(14, 61, 231, 0) 99.96%);
+
 }
 
 header button{
@@ -78,7 +82,6 @@ nav ul li a:hover{
 }
 
 .container{
-
   display: flex;
   justify-content: space-around;
   padding: 2rem 2rem;
