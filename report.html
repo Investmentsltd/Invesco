@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/report.css">
+  <title>CISA/</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+  </style>
+</head>
+<body>
+  <div class="subnav">
+    <div class="cisa"><img src="./css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
+    <p>An official website of the United States government</p>
+  </div>
+
+  <nav>
+    <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
+
+    <a href="report.html"><button onclick="alert('Your report ID will expire within 3 minutes and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">Report Page</button></a>
+  </nav>
+
+  <div class="subcontainer">
+    <h3>AMERICA'S CYBER SECURITY DEFENCE AGENCY</h3>
+  </div>
+
+  <div class="pop">
+
+  </div>
+
+  
+  <h2>Cybersecurity Threat Report</h2>
+
+  <div id="popupContainer">
+    <div id="closeButton" onclick="closePopup()">X</div>
+    <p>Thank you for contributing to our cybersecurity community!</p>
+    <p>Your reports help make the internet a safer place for everyone. Please request for Agencies private report link if you happen to have any relative or associate that might have been a victim.</p><br>
+    <button style="background-color: white; color: #4CAF50;">COPY REPORT LINK</button>
+</div>
+
+
+  <form id="cybersecurityForm">
+      <label for="reporterName">Your Name:</label>
+      <input type="text" id="reporterName" name="reporterName" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="incidentType">Incident Type:</label>
+      <select id="incidentType" name="incidentType" required>
+          <option value="phishing">Select Incident Type</option>
+          <option value="phishing">Phishing</option>
+          <option value="malware">Malware</option>
+          <option value="dataBreach">Data Breach</option>
+          <option value="dataBreach">Man-in-the-Middle Attacks</option>
+          <option value="dataBreach">Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks</option>
+          <option value="dataBreach">Credential Attacks</option>
+          <option value="dataBreach">Social Engineering</option>
+          <option value="dataBreach">Cryptojacking</option>
+          
+          <!-- Add more options as needed -->
+      </select>
+
+      <label for="incidentDetails">Incident Details:</label>
+      <textarea id="incidentDetails" name="incidentDetails" required></textarea>
+
+      <button type="submit">Submit Report</button>
+  </form>
+
+  <script>
+      document.getElementById("cybersecurityForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+          // Add JavaScript logic here to handle form submission (e.g., send data to a server)
+          alert("Report submitted successfully!  Expect a feedback in your provided email address within 24hr time as we will have to review the testimony you have sent us. Stay safe!");
+      });
+
+            // Function to show the popup after 3 seconds
+        function showPopup() {
+            setTimeout(function() {
+                document.getElementById("popupContainer").style.display = "block";
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("popupContainer").style.display = "none";
+        }
+
+        // Call the function when the page loads
+        window.onload = showPopup;
+  </script>
+
+<br><br><br>
+<footer>
+  <div class="container5">
+    <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div><br><br>
+    <img src="./css/images/ntas_03_noadvisories.svg" alt="">
+    <br>
+  </div>
+</footer>
+</body>
+</html>
