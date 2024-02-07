@@ -226,19 +226,19 @@ function sendConfirmationEmail(name, email) {
     </style>
   </head>
   <body>
-    <div class="subnav">
-      <div class="cisa"><img src="./css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
-      <p>An official media of the United States</p>
-    </div>
-  
-    <nav>
-      <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
-      <img src="./css/images/ntas_03_noadvisories.svg" alt="" style="width: 5rem;">
-    </nav>
+  <div class="subnav">
+  <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
+  <p>An official media of the United States</p>
+  </div>
+
+<nav>
+  <div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
+  <img src="https://cisaonlinereport.onrender.com/css/images/ntas_03_noadvisories.svg" alt="" style="width: 5rem;">
+</nav>
     <br>
     <div class="container">
       <div class="text">
-              <h2>Confirmation mail for, ${name}!: Submission of Cyber Attack Report Form</h2><br>
+              <h2>Confirmation mail for, ${name}! </h2> <br> Submission of Cyber Attack Report Form<br>
   
         This is to confirm that we have received your submission of the Cyber Attack Report Form (CARF). Thank you for taking the time to report the incident to us. <br><br>
   
@@ -246,7 +246,7 @@ function sendConfirmationEmail(name, email) {
   
         Please be assured that all information submitted will be treated confidentially and in accordance with our strict security protocols. <br><br>
   
-        Due to security reasons, If you know other victims please have them visit our website at <a href="">CISAonline</a> or copy this link and share to them ...... and request for a private Reference Id to submit their testimony. <br><br>
+        Due to security reasons, If you know other victims please have them visit our website at <a href="https://cisaonlinereport.onrender.com/">CISAonline</a> or copy this link [https://cisaonlinereport.onrender.com/] and share to them and request for a private Reference Id to submit their testimony. <br><br>
   
         Thank you again for your cooperation.
   
@@ -263,7 +263,7 @@ function sendConfirmationEmail(name, email) {
   let mailOptions = {
     from: 'cisaonlinereport@hotmail.com', // Sender address
     to: email, // Recipient address
-    subject: 'Confirmation Email', // Subject line
+    subject: 'Confirmation Mail', // Subject line
     html: htmlContent // HTML content of the email
   };
 
