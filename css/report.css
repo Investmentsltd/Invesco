@@ -13,10 +13,12 @@ body{
   text-align: center;
   font-size: 12px;
   height: 2rem;
-  background-color: rgb(225, 225, 225);
+  background-color: rgb(0, 78, 162);
+  color: white;
   padding: 0.5rem 1.5rem;
   display: flex;
   gap: 5rem;
+  font-size: 70%;
 }
 
 .subnav img{
@@ -104,6 +106,7 @@ select{
   color: rgb(42, 42, 113);
   height: 2.5rem;
   border-radius: 5px;
+  border-style: none;
 }
 
 option{
@@ -199,4 +202,9 @@ button:hover {
   .container5{
     text-align: center;
   }
+}
+
+.radioin{
+  text-align: left;
+  margin-left: -40%;
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/authenticate.css">
+  <title>CISA/Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+  </style>
+</head>
+<body>
+  <div class="subnav">
+    <div class="cisa"><img src="./css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
+    <p>An official website of the United States</p>
+  </div>
+
+  <nav>
+    <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
+  </nav>
+
+    <div class="form">
+      <form action="/login" method="post" onsubmit="return validateForm()">
+        <label for="id"><h3>ENTER DARK_WEB ID</h3></label><br>
+        <input type="text" id="username" name="username" placeholder="First ID" required><br><br><br>
+        <input type="password" id="password" name="password" placeholder="Second ID" required><br><br>
+        <button>SUBMIT</button>
+      </form>
+    </div><br><br><br>
+  
+    <footer>
+      <div class="container5">
+        <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div><br><br>
+        <img src="./css/images/ntas_03_noadvisories.svg" alt="">
+        <br>
+      </div>
+    </footer>
+
+    <script>
+          function validateForm() {
+              var password = document.getElementById('password').value;
+
+              // Perform client-side validation
+              if (password.length < 6) {
+                  document.getElementById('passwordError').innerText = 'Password must be at least 6 characters.';
+                  return false;
+              } else {
+                  document.getElementById('passwordError').innerText = '';
+                  return true;
+              }
+          }
+
+          
+          document.getElementById('login-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username, password })
+            })
+            .then(response => {
+              if (response.ok) {
+                window.location.href = '/dashboard';
+              } else if (response.status === 401) {
+                alert('Invalid username or password');
+              } else {
+                throw new Error('Failed to login');
+              }
+            })
+            .catch(error => {
+              console.error('Error logging in:', error);
+              alert('Failed to login. Please try again later.');
+            });
+          });
+        
+  </script>
+</body>

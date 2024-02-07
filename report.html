@@ -12,7 +12,7 @@
 <body>
   <div class="subnav">
     <div class="cisa"><img src="./css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
-    <p>An official website of the United States government</p>
+    <p>An official website of the United States</p>
   </div>
 
   <nav>
@@ -33,16 +33,16 @@
   <h2>Cybersecurity Threat Report</h2>
 
   <div id="popupContainer">
-    <div id="closeButton" onclick="closePopup()">X</div>
+    <div id="closeButton" onclick="closePopup()">X</div><br>
     <p>Thank you for contributing to our cybersecurity community!</p>
     <p>Your reports help make the internet a safer place for everyone. Please request for Agencies private report link if you happen to have any relative or associate that might have been a victim.</p><br>
-    <button style="background-color: white; color: #4CAF50;">COPY REPORT LINK</button>
+    <button onclick="copyToClipboard('https://your-url.com')" style="background-color: white; color: #4CAF50;">COPY REPORT LINK</button>
 </div>
 
 
   <form id="cybersecurityForm">
-      <label for="reporterName">Your Name:</label>
-      <input type="text" id="reporterName" name="reporterName" required>
+      <label for="reporter_name">Your Name:</label>
+      <input type="text" id="reporter_name" name="reporter_name" required>
 
       <label for="email">Your Email:</label>
       <input type="email" id="email" name="email" required>
@@ -60,20 +60,36 @@
           <option value="dataBreach">Cryptojacking</option>
           
           <!-- Add more options as needed -->
-      </select>
+      </select><br><br>
 
       <label for="incidentDetails">Incident Details:</label>
-      <textarea id="incidentDetails" name="incidentDetails" required></textarea>
+      <textarea id="incidentDetails" name="incidentDetails" placeholder="Please elaborate more on the incident"></textarea>
 
       <button type="submit">Submit Report</button>
   </form>
 
   <script>
-      document.getElementById("cybersecurityForm").addEventListener("submit", function(event) {
-          event.preventDefault();
-          // Add JavaScript logic here to handle form submission (e.g., send data to a server)
-          alert("Report submitted successfully!  Expect a feedback in your provided email address within 24hr time as we will have to review the testimony you have sent us. Stay safe!");
-      });
+
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            // Create a temporary input element
+            var inputElement = document.createElement('textarea');
+            inputElement.value = text;
+            document.body.appendChild(inputElement);
+
+            // Select the text in the input element
+            inputElement.select();
+            inputElement.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text to the clipboard
+            document.execCommand('copy');
+
+            // Remove the temporary input element
+            document.body.removeChild(inputElement);
+
+            // Optionally provide user feedback
+            alert('URL copied to clipboard');
+        }
 
             // Function to show the popup after 3 seconds
         function showPopup() {
@@ -89,6 +105,55 @@
 
         // Call the function when the page loads
         window.onload = showPopup;
+
+       
+                // Add an event listener to the form for form submission
+        document.getElementById("cybersecurityForm").addEventListener("submit", function(event) {
+          // Prevent the default form submission behavior
+          event.preventDefault();
+
+          // Retrieve form data
+          var reporterName = document.getElementById("reporter_name").value.trim();
+          var email = document.getElementById("email").value.trim();
+          var incidentType = document.getElementById("incidentType").value.trim();
+          var incidentDetails = document.getElementById("incidentDetails").value.trim();
+
+          // Check if the reporter name is empty
+          if (!reporterName) {
+            alert("Please enter your name.");
+            return;
+          }
+
+          // Send form data to the server using fetch API
+          fetch('/submit-form', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              reporter_name: reporterName,
+              email: email,
+              incidentType: incidentType,
+              incidentDetails: incidentDetails
+            })
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // Return response text
+          })
+          .then(data => {
+            // Display success message to the user
+            alert(data);
+          })
+          .catch(error => {
+            // Display error message to the user
+            console.error('There was a problem with your fetch operation:', error);
+            alert('There was an error processing your request. Please try again later.');
+          });
+        });
+  
   </script>
 
 <br><br><br>
