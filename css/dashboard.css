@@ -121,3 +121,7 @@ button{
   }
 }
 
+
+#images-container img{
+  width: 50%;
+}

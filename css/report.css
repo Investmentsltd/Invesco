@@ -224,27 +224,13 @@ button:hover {
   z-index: 9999;
 }
 
-/* Rotating circle animation */
-.loading-circle {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7986CB;
   border-radius: 50%;
-  width: 110px;
-  height: 110px;
-  animation: spin 2s linear infinite;
-  position: absolute;
-  top: calc(40% - 25px); /* Adjust the position */
-  left: calc(40% - 25px); /* Adjust the position */
-}
-
-/* Rotating logo animation */
-.company-logo {
-  width: 100px; /* Adjust the size */
-  height: auto;
-  position: absolute;
-  top: calc(40.8% - 25px); /* Adjust the position */
-  left: calc(40.9% - 25px); /* Adjust the position */
-  animation: spin 4s linear infinite reverse;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
