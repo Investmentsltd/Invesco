@@ -140,3 +140,78 @@ form input{
     text-align: center;
   }
 }
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 78, 162, 0.812);
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  z-index: 9999;
+}
+
+/* Styles for rotating circle animation */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  z-index: 9999;
+}
+
+/* Styles for rotating circle animation */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 78, 162, 0.998);
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  z-index: 9999;
+}
+
+/* Rotating circle animation */
+.loading-circle {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: calc(40% - 25px); /* Adjust the position */
+  left: calc(40% - 25px); /* Adjust the position */
+}
+
+/* Rotating logo animation */
+.company-logo {
+  width: 100px; /* Adjust the size */
+  height: auto;
+  position: absolute;
+  top: calc(40.8% - 25px); /* Adjust the position */
+  left: calc(40.9% - 25px); /* Adjust the position */
+  animation: spin 4s linear infinite reverse;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

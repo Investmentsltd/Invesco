@@ -216,12 +216,12 @@ function sendConfirmationEmail(name, email) {
       }
   
       .container{
-        padding: 2rem;
+        padding: 1rem;
       }
   
       .text{
         background-color: white;
-        padding: 2rem;
+        padding: 1rem;
       }
     </style>
   </head>

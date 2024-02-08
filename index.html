@@ -7,6 +7,7 @@
   <title>CISA/Report</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    
   </style>
 </head>
 <body>
@@ -18,7 +19,7 @@
   <nav>
     <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
 
-    <a href="authenticate.html"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">To Report Page ></button></a>
+    <a href="authenticate.html" id="pageLink" class="pageLink"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">To Report Page ></button></a>
   </nav>
 
   <div class="subcontainer">
@@ -28,9 +29,17 @@
   <div class="container">
     <h3>ShieldsUp</h3><br>
     <p>prepare for, respond to, and mitigate the impact of <br> cyberattacks.</p><br>
-    <a href="authenticate.html"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">ENTER REFFERENCE ID ></button></a>
+    <a href="authenticate.html" id="pageLink" class="pageLink"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">ENTER REFFERENCE ID ></button></a>
   </div>
-
+  <div id="loadingScreen" class="loading-screen">
+  <!-- Container for logo and rotating circle -->
+    <div class="loading-container">
+    <!-- Your company logo -->
+    <img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt="Company Logo" class="company-logo" width="100">
+    <!-- Rotating circle animation -->
+    <div class="loading-circle"></div>
+    </div>
+  </div>
   <div class="container2">
 
     <div class="video">
@@ -40,7 +49,7 @@
       <h3>Opening Statement by CISA Director Jen Easterly</h3><br>
     Before House Select Committee on <br> Strategic Competition Between the United <br>States and the Chinese Communist Party
     <br><br>
-    <a href="authenticate.html">
+    <a href="authenticate.html" id="pageLink" class="pageLink">
       <button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">READ TESTIMONY ></button>
     </a>
     </div>
@@ -62,23 +71,46 @@
     <div class="text">
       <img src="./css/images/homepagelogossrware.png" alt=""><br><br>
       <p>StopRansomeware is the U.S Government's official one-stop location for resources to tackle ransomewhere more effectively</p><br>
-      <a href="authenticate.html"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">REPORT ENCOUNTER ></button></a><br><br>
+      <a href="authenticate.html" id="pageLink" class="pageLink"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">REPORT ENCOUNTER ></button></a><br><br>
     </div>
     <br><br>
     <div class="top2"></div>
     <div class="text2">
       <img src="./css/images/HomepageLogos-SOW.png" alt=""><br><br>
       <p>The Secure Our World program offers resources and advice to stay safe online. each of us has a part to play; it's easy to do and take less time than think!</p><br>
-      <a href="authenticate.html"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">REPORT ENCOUNTER ></button></a><br><br>
+      <a href="authenticate.html" id="pageLink" class="pageLink"><button onclick="alert('Your report ID will expire within 3 minutes after you have used it at a time and your session will be terminated for security purposes. It is recommended that you make your report statement quick.')">REPORT ENCOUNTER ></button></a><br><br>
     </div>
   </div>
 
-  <a href="admin-login.html" style="text-decoration: none;">
+  <a href="admin-login.html" style="text-decoration: none;" id="pageLink" class="pageLink">
     <div class="container5">
       <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div><br><br>
       <img src="./css/images/ntas_03_noadvisories.svg" alt="">
       <br>
     </div>
   </a>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on elements with class "pageLink"
+    var pageLinks = document.getElementsByClassName('pageLink');
+    for (var i = 0; i < pageLinks.length; i++) {
+      pageLinks[i].addEventListener('click', function(event) {
+        // Display loading screen
+        document.getElementById("loadingScreen").style.display = "flex";
+
+        // Extract the href attribute from the clicked element
+        var href = this.getAttribute('href');
+
+        // Delay navigating to the new page
+        setTimeout(function() {
+          window.location.href = href; // Redirect to the href URL
+        }, 6000); // 6000 milliseconds = 6 seconds
+
+        // Prevent the default action of the clicked element
+        event.preventDefault();
+      });
+    }
+  });
+</script>
 </body>
 </html>

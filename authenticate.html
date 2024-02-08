@@ -20,12 +20,21 @@
 
     <a href="#"><button>Authentication</button></a>
   </nav>
-
+  <div id="loadingScreen" class="loading-screen">
+    <!-- Container for logo and rotating circle -->
+    <div class="loading-container">
+      <!-- Your company logo -->
+      <img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt="Company Logo" class="company-logo" width="100">
+      <!-- Rotating circle animation -->
+      <div class="loading-circle"></div>
+    </div>
+  </div>
+  </div>
   <div class="form">
     <form id="loginForm">
       <label for="id"><h3>ENTER REFFERENCE ID</h3></label><br>
       <input type="text" id="referenceId" name="referenceId" required><br><br>
-      <button>SUBMIT</button>
+      <button  type="submit">SUBMIT</button>
     </form>
   </div><br><br><br><br><br><br><br>
 
@@ -39,34 +48,43 @@
 
   <script>
     // Add an event listener to the form for form submission
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add an event listener to the form for form submission
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+        // Display loading screen
+        document.getElementById("loadingScreen").style.display = "flex";
 
-    // Retrieve the reference ID from the form
-    const referenceId = document.getElementById("referenceId").value;
+        // Delay form submission to simulate loading
+        setTimeout(function() {
+          // Retrieve the reference ID from the form
+          const referenceId = document.getElementById("referenceId").value;
 
-    // Send the reference ID to the server for login
-    fetch('/login/reference', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ referenceId })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        // Redirect the user to the dashboard upon successful login
-        window.location.href = '/report.html';
-    })
-    .catch(error => {
-        // Display error message to the user
-        console.error('There was a problem with your fetch operation:', error);
-        alert('There was an error logging in. Please try again later.');
+          // Send the reference ID to the server for login
+          fetch('/login/reference', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ referenceId })
+          })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              // Redirect the user to the dashboard upon successful login
+              window.location.href = '/report.html';
+          })
+          .catch(error => {
+              // Display error message to the user
+              console.error('There was a problem with your fetch operation:', error);
+              alert('There was an error logging in. Please try again later.');
+          });
+        }, 6000); // 6000 milliseconds = 6 seconds
+
+        // Prevent the default form submission behavior
+        event.preventDefault();
+      });
     });
-});
 
   </script>
 </body>
