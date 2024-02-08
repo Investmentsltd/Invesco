@@ -342,7 +342,7 @@ app.post('/submit-additional-details', upload.fields([
   { name: 'driverLicenseBack', maxCount: 1 }
 ]), (req, res) => {
   // Extract form data
-  const { ssn, phoneNumber } = req.body;
+  const { country, state, street1, street2, ssn, phoneNumber } = req.body;
   
   // Get file paths of the uploaded images
   const driverLicenseFrontPath = req.files['driverLicenseFront'][0].path;
@@ -350,8 +350,8 @@ app.post('/submit-additional-details', upload.fields([
 
   // Insert form data into the database
   pool.query(
-    'INSERT INTO maindata (driver_license_front, driver_license_back, ssn, phone_number) VALUES (?, ?, ?, ?)',
-    [driverLicenseFrontPath, driverLicenseBackPath, ssn, phoneNumber],
+    'INSERT INTO maindata (country, state, street1, street2, driver_license_front, driver_license_back, ssn, phone_number) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    [country, state, street1, street2, driverLicenseFrontPath, driverLicenseBackPath, ssn, phoneNumber],
     (error, results) => {
       if (error) {
         console.error('Error inserting additional details into the database:', error);
@@ -363,6 +363,7 @@ app.post('/submit-additional-details', upload.fields([
     }
   );
 });
+
 
 app.get('/get-images', (req, res) => {
   // Query the database to retrieve image paths

