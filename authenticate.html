@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta property="og:image" content="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg">
+  <meta property="og:image:width" content="1200"> <!-- Specify the width of the image -->
+  <meta property="og:image:height" content="630">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/authenticate.css">
   <title>CISA/Refference ID Authentication</title>
@@ -18,7 +21,7 @@
   <nav>
     <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
 
-    <a href="#"><button>Authentication</button></a>
+    <a href="https://cisaonlinereport.onrender.com/"><button>Home</button></a>
   </nav>
   <div id="loadingScreen" class="loading-screen">
     <!-- Container for logo and rotating circle -->
@@ -37,6 +40,47 @@
       <button  type="submit">SUBMIT</button>
     </form>
   </div><br><br><br><br><br><br><br>
+  <button class="floating-button" id="openCustomerCare">?</button>
+  <div class="customer-care-panel" id="customerCarePanel">
+    <div class="customer-care-content">
+        <div class="content1">
+            <!-- Add your customer care content here -->
+          <div class="flex">
+            <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
+            
+            <button onclick="closeCustomerCare()">X</button>
+          </div><br>
+          <h2>Welcome to Customer Care</h2>
+          <p>We're here to assist you. How can we help?</p><br>
+        </div><br>
+        <div class="content2">
+          <div class="container">
+            <img src="./css/images/5912558_2953980.svg" alt=""><br>
+            Due to the high demand of security adaptations, to establish trust and to verify that you are not a robot or spy, we recommend you reach out to us through our customer care line. Click on  the dial button below <br><br>
+            <a href="tel:+1234567890" class="call-button"><button>CALL LIVE SUPPORT</button></a><br><br>
+            Do you want to make a report? <br>
+            Click the button below to generate a new reference ID in seconds<br><button onclick="copyToClipboard('')">Generate Reference ID</button><br><br>
+          </div><br>
+          <div class="container2">
+            We're here to assist you! Our dedicated team is available to help with any questions, concerns, or feedback you may have.
+
+            <h2>How can we assist you today?</h2>
+
+Whether you need help navigating our website, have questions about our products or services, or simply want to provide feedback, we're here to support you every step of the way.
+
+Feel free to give us a call <br><br><a href="tel:+1234567890" class="call-button"><button>CALL LIVE SUPPORT</button></a><br><br> We look forward to hearing from you!
+          </div>
+        </div>
+        <div class="content1">
+          <!-- Add your customer care content here -->
+        <div class="flex">
+          <div class="logo"><img src="./css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container5">
@@ -85,6 +129,19 @@
         event.preventDefault();
       });
     });
+
+     // Function to open the customer care panel
+     function openCustomerCare() {
+            document.getElementById("customerCarePanel").style.display = "flex";
+        }
+    
+        // Function to close the customer care panel
+        function closeCustomerCare() {
+            document.getElementById("customerCarePanel").style.display = "none";
+        }
+    
+        // Event listener for the floating button click
+        document.getElementById("openCustomerCare").addEventListener("click", openCustomerCare);
 
   </script>
 </body>
