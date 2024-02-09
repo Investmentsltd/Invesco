@@ -66,7 +66,7 @@ nav .logo p{
 
 .container{
   padding: 1rem;
-  background-color: rgb(133, 1, 1);
+  background: linear-gradient(200deg, rgb(133, 1, 1) 0.9%, rgb(144, 21, 21) 15.9%, rgb(133, 1, 1) 10.9%, rgb(144, 21, 21) 35.9%, rgb(133, 1, 1) 0.96%);
   color: white;
 }
 
