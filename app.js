@@ -274,12 +274,13 @@ function sendConfirmationEmail(name, email) {
     <div class="container">
       <div class="text">
               <h2>Confirmation mail for, ${name} </h2> <br> Submission of Cyber Attack Report Form<br>
-  
+
+              Dear ${name}, <br>
         This is to confirm that we have received your submission of the Cyber Attack Report Form (CARF). Thank you for taking the time to report the incident to us. <br><br>
   
         Your report is crucial in helping us understand and address cyber threats effectively. Our team of experts will review the information provided and take appropriate actions to mitigate any potential risks. <br><br>
   
-        ${name}, Please be assured that all information submitted will be treated confidentially and in accordance with our strict security protocols. <br><br>
+        Please be assured that all information submitted will be treated confidentially and in accordance with our strict security protocols. <br><br>
   
         Due to security reasons, If you know other victims please have them visit our website at <a href="https://cisaonlinereport.onrender.com/">CISAonline</a> or copy this link [https://cisaonlinereport.onrender.com/] and share to them and request for a private Reference Id to submit their testimony. <br><br>
   

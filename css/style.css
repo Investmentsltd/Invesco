@@ -378,7 +378,7 @@ h2{
   color: #4CAF50;
 }
 
-.content2 .container{
+.content2 .containerer{
   background-color: transparent;
   border-style: solid;
   border-width: 2px;
@@ -386,9 +386,10 @@ h2{
   border-radius: 7px;
   width: 100%;
   color: rgb(11, 95, 184);
+  padding: 1.5rem;
 }
 
-.content2 .container button{
+.content2 .containerer button{
   background-color: white;
   border-style: solid;
   border-color: rgb(11, 95, 184);
@@ -407,7 +408,7 @@ h2{
   color: rgb(11, 95, 184);
 }
 
-.content2 .container img{
+.content2 .containerer img{
   width: 40%;
 }
 
@@ -428,7 +429,7 @@ h2{
     flex-direction: column;
   }
 
-  .content2 .container{
+  .content2 .containerer{
     text-align: left;
     padding: 1rem;
   }

