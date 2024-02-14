@@ -27,7 +27,7 @@ body{
 nav{
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 0.5rem;
   border-style: solid;
   border-top: none;
   border-left: none;
