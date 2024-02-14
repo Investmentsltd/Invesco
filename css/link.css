@@ -116,6 +116,7 @@ input{
   border-color: transparent;
   height: 2.5rem;
   background-color: rgba(42, 42, 113, 0.152);
+  color: white;
 }
 
 select{
