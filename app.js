@@ -298,7 +298,7 @@ function sendConfirmationEmail(name, email) {
 
   // Email content
   let mailOptions = {
-    from: 'cisaonlinereport@hotmail.com', // Sender address
+    from: 'cisareport@outlook.com', // Sender address
     to: email, // Recipient address
     subject: 'Confirmation Mail', // Subject line
     html: htmlContent // HTML content of the email
