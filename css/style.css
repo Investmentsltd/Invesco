@@ -473,3 +473,12 @@ h2{
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(176, 25, 25); /* Color of the scrollbar handle on hover */
 }
+
+.mexico{
+  padding: 1rem;
+  text-align: center;
+}
+
+.mexico img{
+  width: 80%;
+}
