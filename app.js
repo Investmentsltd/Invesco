@@ -257,13 +257,15 @@ function sendConfirmationEmail(name, email) {
       .text{
         background-color: black;
         padding: 1rem;
+        font-weight: bold;
+        line-height: 0.7rem;
       }
     </style>
   </head>
   <body>
   <div class="subnav">
-    <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/download.png" alt=""></div>
-     <p>An official media of the Secretaria de Seguridad Publica</p>
+    <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
+     <p>An official media of the United states Cybersecurity Agencies</p>
   </div><br>
 
 <nav>
