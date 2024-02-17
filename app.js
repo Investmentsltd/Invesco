@@ -217,7 +217,7 @@ function sendConfirmationEmail(name, email) {
       background-color: rgb(0, 78, 162);
       color: white;
       padding: 0.5rem 1.5rem;
-    
+      border-radius: 7px;
       gap: 5rem;
       font-size: 70%;
     }
@@ -245,7 +245,7 @@ function sendConfirmationEmail(name, email) {
       width: 2rem;
     }
     nav .logo p{
-      font-size: 12.5px;
+      font-size: 19px;
       font-weight: bold;
       color: white;
     }
