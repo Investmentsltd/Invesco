@@ -253,17 +253,19 @@ function sendConfirmationEmail(name, email) {
       .container{
         padding: 1rem;
         background-color: black;
+        border-radius: 7px;
       }
   
       .text{
         
         padding: 1rem;
-        font-weight: bold;
+
         line-height: 2.1rem;
         color: white;
+        font-size: 20px;
       }
 
-      h2{
+      h1{
         color: rgb(0, 78, 162);
       }
     </style>
@@ -271,17 +273,18 @@ function sendConfirmationEmail(name, email) {
   <body>
   <div class="subnav">
     <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
-     <p>An official media of the United states Cybersecurity Agencies</p>
-  </div><br>
-
-<nav>
+     <p>An official media of the United states Cybersecurity Agencies</p><br>
+     <nav>
   <div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
   <img src="https://cisaonlinereport.onrender.com/css/images/ntas_03_noadvisories.svg" alt="" style="width: 3rem;">
-</nav>
+  </nav>
+  </div>
+
+
     <br>
     <div class="container">
       <div class="text">
-              <h2>Confirmation mail for, ${name} </h2> <br> Submission of Cyber Attack Report Form<br>
+              <h1>Confirmation mail for, ${name} </h1> <br> Submission of Cyber Attack Report Form<br>
 
               Dear ${name}, <br>
         This is to confirm that we have received your submission of the Cyber Attack Report Form (CARF). Thank you for taking the time to report the incident to us. <br><br>
