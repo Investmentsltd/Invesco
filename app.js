@@ -231,7 +231,7 @@ function sendConfirmationEmail(name, email) {
       padding: 0.5rem 1.5rem;
       display: flex;
       justify-content: space-between;
-  
+      
       color: white;
    
     }
@@ -239,13 +239,15 @@ function sendConfirmationEmail(name, email) {
     nav .logo{
       display: flex;
       gap: 0.5rem;
+      
     }
 
     nav .logo img{
       width: 2rem;
     }
-    nav .logo p{
-      font-size: 19px;
+
+    .subnav nav .logo p{
+      font-size: 16px;
       font-weight: bold;
       color: white;
     }
@@ -275,7 +277,7 @@ function sendConfirmationEmail(name, email) {
   <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
    <p>An official media of the United states Cybersecurity Agencies</p><br>
    <nav>
-<div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
+<div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY AGENCY</p></div>
 <img src="https://cisaonlinereport.onrender.com/css/images/ntas_03_noadvisories.svg" alt="" style="width: 3rem;">
 </nav>
 </div>
