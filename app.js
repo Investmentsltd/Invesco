@@ -252,13 +252,19 @@ function sendConfirmationEmail(name, email) {
   
       .container{
         padding: 1rem;
+        background-color: black;
       }
   
       .text{
-        background-color: black;
+        
         padding: 1rem;
         font-weight: bold;
-        line-height: 0.7rem;
+        line-height: 2.1rem;
+        color: white;
+      }
+
+      h2{
+        color: rgb(0, 78, 162);
       }
     </style>
   </head>
