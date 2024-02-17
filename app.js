@@ -177,7 +177,7 @@ function sendConfirmationEmail(name, email) {
     port: 587,
     secure: false,
     auth: {
-      user: 'cisaonlinereport@hotmail.com', // Your email address
+      user: 'cisareport@outlook.com', // Your email address
       pass: 'Samuelfelicia@2002' // Your email password
     },
     tls: {
