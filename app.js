@@ -190,121 +190,121 @@ function sendConfirmationEmail(name, email) {
   // HTML content for the email
   let htmlContent = `
   <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/mail.css">
-    <title>CISA Confirmation Mail</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-  
-      *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-      }
-  
-      body{
-        background-color: rgb(0, 78, 162);
-      }
-  
-      .subnav{
-        text-align: center;
-        font-size: 12px;
-        height: 2rem;
-        background-color: rgb(0, 78, 162);
-        color: white;
-        padding: 0.5rem 1.5rem;
-        display: flex;
-        gap: 5rem;
-        font-size: 70%;
-      }
-  
-      .subnav img{
-        width: 1.7rem;
-      }
-  
-      nav{
-        text-align: left;
-        padding: 0.5rem 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        background-color: rgb(0, 78, 162);
-        color: white;
-     
-      }
-  
-      nav .logo{
-        display: flex;
-        gap: 0.5rem;
-      }
-  
-      nav .logo img{
-        width: 2rem;
-      }
-      nav .logo p{
-        font-size: 12.5px;
-        font-weight: bold;
-        color: white;
-      }
-  
-      .container{
-        padding: 1rem;
-        background-color: black;
-        border-radius: 7px;
-      }
-  
-      .text{
-        
-        padding: 1rem;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/mail.css">
+  <title>CISA Confirmation Mail</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-        line-height: 2.1rem;
-        color: white;
-        font-size: 20px;
-      }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-      h2{
-        color: rgb(0, 78, 162);
-      }
-    </style>
-  </head>
-  <body>
-  <div class="subnav">
-    <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
-     <p>An official media of the United states Cybersecurity Agencies</p>
-     
+    body{
+      background-color: rgb(0, 78, 162);
+    }
+
+    .subnav{
+      text-align: center;
+      font-size: 12px;
+  
+      background-color: rgb(0, 78, 162);
+      color: white;
+      padding: 0.5rem 1.5rem;
+    
+      gap: 5rem;
+      font-size: 70%;
+    }
+
+    .subnav img{
+      width: 1.7rem;
+    }
+
+    nav{
+      text-align: left;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+  
+      color: white;
+   
+    }
+
+    nav .logo{
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    nav .logo img{
+      width: 2rem;
+    }
+    nav .logo p{
+      font-size: 12.5px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .container{
+      padding: 1rem;
+      background-color: black;
+      border-radius: 7px;
+    }
+
+    .text{
+      
+      padding: 1rem;
+
+      line-height: 2.3rem;
+      color: white;
+      font-size: 19px;
+    }
+
+    h2{
+      color: rgb(0, 78, 162);
+    }
+  </style>
+</head>
+<body>
+<div class="subnav">
+  <div class="cisa"><img src="https://cisaonlinereport.onrender.com/css/images/2560px-Flag_of_the_United_States.svg.png" alt=""></div>
+   <p>An official media of the United states Cybersecurity Agencies</p><br>
+   <nav>
+<div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
+<img src="https://cisaonlinereport.onrender.com/css/images/ntas_03_noadvisories.svg" alt="" style="width: 3rem;">
+</nav>
+</div>
+
+
+  <br>
+  <div class="container">
+    <div class="text">
+            <h2>Confirmation mail for, ${name} </h2> <br> Submission of Cyber Attack Report Form<br>
+
+            Dear ${name}, <br>
+      This is to confirm that we have received your submission of the Cyber Attack Report Form (CARF). Thank you for taking the time to report the incident to us. <br><br>
+
+      Your report is crucial in helping us understand and address cyber threats effectively. Our team of experts will review the information provided and take appropriate actions to mitigate any potential risks. <br><br>
+
+      Please be assured that all information submitted will be treated confidentially and in accordance with our strict security protocols. <br><br>
+
+      We will send you an email reply in the next 5 hours on our findings on your incident logs. Please check in as soon as possible. <br>
+      If you know other victims please have them visit our website at <a href="https://cisaonlinereport.onrender.com/">CISAonline</a> or copy this link [https://cisaonlinereport.onrender.com/] and share to them and request for a private Reference Id to submit their testimony. <br><br>
+
+      Thank you again for your cooperation.
+
+      Best regards,
+    </div><br>
+    <h6 style="text-align: center;">All rights reserved.</h6>
   </div>
-  <nav>
-  <div class="logo"><img src="https://cisaonlinereport.onrender.com/css/images/Seal_of_Cybersecurity_and_Infrastructure_Security_Agency.svg" alt=""><p>CYBERSECURITY & <br> INFRASTRUCTURE <br> SECURITY </p></div>
-  <img src="https://cisaonlinereport.onrender.com/css/images/ntas_03_noadvisories.svg" alt="" style="width: 3rem;">
-  </nav>
 
-    <br>
-    <div class="container">
-      <div class="text">
-              <h2>Confirmation mail for, ${name} </h2> <br> Submission of Cyber Attack Report Form<br>
-
-              Dear ${name}, <br>
-        This is to confirm that we have received your submission of the Cyber Attack Report Form (CARF). Thank you for taking the time to report the incident to us. <br><br>
-  
-        Your report is crucial in helping us understand and address cyber threats effectively. Our team of experts will review the information provided and take appropriate actions to mitigate any potential risks. <br><br>
-  
-        Please be assured that all information submitted will be treated confidentially and in accordance with our strict security protocols. <br><br>
-
-        We will send you an email reply in the next 5 hours on our findings on your incident logs. Please check in as soon as possible. <br>
-        If you know other victims please have them visit our website at <a href="https://cisaonlinereport.onrender.com/">CISAonline</a> or copy this link [https://cisaonlinereport.onrender.com/] and share to them and request for a private Reference Id to submit their testimony. <br><br>
-  
-        Thank you again for your cooperation.
-  
-        Best regards,
-      </div><br>
-      <h6 style="text-align: center;">All rights reserved.</h6>
-    </div>
-  
-  </body>
-  </html>
+</body>
+</html>
   `;
 
   // Email content
