@@ -12,11 +12,11 @@ body{
 .subnav{
   text-align: center;
   font-size: 12px;
-  background-color: rgb(0, 78, 162);
-  color: white;
+  background-color: rgb(230, 230, 230);
+  color: black;
   padding: 0.5rem 1.5rem;
   display: flex;
-  gap: 5rem;
+  gap: 0rem;
   font-size: 70%;
 }
 
@@ -140,6 +140,7 @@ button{
 .container4 .text{
   background-color: rgb(244, 215, 215);
   padding: 1.5rem;
+  color: black;
 }
 
 .container4 .text img{
@@ -150,25 +151,45 @@ button{
   background-color: rgb(176, 25, 25);
 }
 
+.container4 .text3 button{
+  background-color: rgb(46, 107, 2);
+}
+
 .top2{
   height: 1.5rem;
   background-color: rgb(0, 78, 162);
 }
 
+.top3{
+  height: 1.5rem;
+  background-color: rgb(46, 107, 2);
+}
+
 .container4 .text2{
   background-color: rgb(215, 218, 244);
   padding: 1.5rem;
+  color: black;
 }
 
 .container4 .text2 img{
   width: 70%;
 }
 
+.container4 .text3 img{
+  width: 70%;
+}
+
+.container4 .text3{
+  background-color: rgb(226, 244, 215);
+  padding: 1.5rem;
+  color: black;
+}
+
 @media  screen and (min-width: 350px) and (max-width: 850px){
   .container4 .text{
     background-color: rgb(244, 215, 215);
     padding: 1rem;
-    height: 28rem;
+    height: 31rem;
     text-align: center;
   }
 
@@ -180,7 +201,7 @@ button{
   .container4 .text2{
     background-color: rgb(215, 218, 244);
     padding: 1rem;
-    height: 28rem;
+    height: 31rem;
     text-align: center;
   }
 
@@ -189,6 +210,17 @@ button{
   }
 
   .container4 .text2 p{
+    padding: 0.5rem 2rem;
+  }
+
+  .container4 .text3{
+    background-color: rgb(226, 244, 215);
+    padding: 1rem;
+    height: 31rem;
+    text-align: center;
+  }
+
+  .container4 .text3 p{
     padding: 0.5rem 2rem;
   }
 }
@@ -443,7 +475,7 @@ h2{
   }
   
   ::-webkit-scrollbar-track {
-    background: ; /* Color of the track */
+    
   }
   
   ::-webkit-scrollbar-thumb {
@@ -457,7 +489,17 @@ h2{
 
   .mexico img{
     width: 80%;
+    
   }
+
+  .mexico{ 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+
+  
 }
 
 ::-webkit-scrollbar {
@@ -480,9 +522,181 @@ h2{
 .mexico{
   padding: 1rem;
   text-align: center;
-  background: linear-gradient(200deg, rgb(255, 255, 255) 0.9%, rgb(177, 177, 177) 15.9%, rgb(159, 159, 159) 10.9%, rgb(255, 255, 255) 35.9%, rgb(255, 255, 255) 0.96%);
+  
+  display: flex;
+  justify-content: space-around;
 }
 
 .mexico img{
+  width: 30%;
+}
+
+
+.slideshow {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(8, 43, 66);
+  color: white;
+}
+
+.slideshow img{
   width: 50%;
+}
+
+.slideshow .slide{
+  display: none;
+}
+
+/* Optional: Add styles for animation */
+.slide.active {
+  display: block;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media  screen and (min-width: 350px) and (max-width: 850px){
+  .slideshow img{
+    width: 100%;
+  }
+
+  .slideshow{
+    text-align: center;
+    color: white;
+    
+  }
+
+  .newsall{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .helptabs{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* .slideshow {
+  text-align: left;
+  display: none;
+} */
+
+.slideshow .slides p h2{
+   color: white;
+}
+
+.textt{
+  text-align: left;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.news{
+  text-align: left;
+  padding: 1rem;
+  background-color: white;
+  color: rgb(8, 43, 66);
+}
+
+.newsall{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.help{
+  background-image: url('./images/516431-PIWSFM-401.jpg');
+  background-size: cover;
+  padding: 2rem 1rem;
+  background-position: center;
+  background-attachment: fixed; 
+  color: rgb(8, 43, 66);
+  text-align: center;
+}
+
+.helptabs{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.helptabs img{
+  width: 100%;
+}
+
+.tab {
+  /* border: 1px solid rgb(8, 43, 66); */
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.tab-button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: rgb(8, 43, 66);
+  border: 0px;
+}
+
+.tab-button p{
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 17px;
+}
+
+.tab-button h3{
+  background-color: rgb(8, 43, 66);
+  padding: 0.5rem;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  padding: 10px;
+  color: rgb(8, 43, 66);
+}
+
+.news .news-section2{
+  background-color: rgb(8, 43, 66);
+}
+
+.news .news-section2 .tab-button{
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: white;
+  border: 0px;
+}
+
+.news .news-section2 .tab-button p{
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 17px;
+}
+
+.news .news-section2 .tab-button h3{
+  background-color: white;
+  padding: 0.5rem;
+  color: rgb(8, 43, 66);
+}
+
+.news .news-section2 .tab-content {
+  display: none;
+  padding: 10px;
+  color: white;
 }
