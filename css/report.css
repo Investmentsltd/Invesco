@@ -24,22 +24,41 @@ body{
   width: 1.7rem;
 }
 
+.subnav{
+  text-align: center;
+  font-size: 12px;
+  background-color: rgb(230, 230, 230);
+  color: rgb(4, 33, 77);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  gap: 0rem;
+  font-size: 70%;
+}
+
+.subnav img{
+  width: 1.7rem;
+}
+
 nav{
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-style: solid;
   border-top: none;
   border-left: none;
   border-right: none;
   border-color: rgb(42, 42, 113);
+  color: white;
   border-width: 1px;
+  background-color: rgb(4, 33, 77);
 }
 
 nav button{
   padding: 0.5rem 1.5rem;
-  border-radius: 0px;
-  background-color: rgb(42, 42, 113);
+  border-radius: 6px;
+  background-color: white;
+  color: rgb(4, 33, 77);
+  font-weight: bold;
 }
 
 nav .logo{
@@ -48,7 +67,10 @@ nav .logo{
 }
 
 nav .logo img{
-  width: 3rem;
+  width: 50%;
+  border-style: solid;
+  border-color: yellow;
+  padding: 2px;
 }
 nav .logo p{
   font-size: 12.5px;
@@ -177,7 +199,7 @@ button:hover {
 }
 
 .container5 .logo img{
-  width: 3rem;
+  width: 50%;
 }
 .container5 .logo p{
   font-size: 12.5px;

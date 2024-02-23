@@ -12,29 +12,16 @@ body{
 .subnav{
   text-align: center;
   font-size: 12px;
-  background-color: rgb(0, 78, 162);
-  color: white;
+  background-color: rgb(230, 230, 230);
+  color: rgb(4, 33, 77);
   padding: 0.5rem 1.5rem;
   display: flex;
-  gap: 5rem;
+  gap: 0rem;
   font-size: 70%;
 }
 
 .subnav img{
   width: 1.7rem;
-}
-
-nav{
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0.5rem;
-  border-style: solid;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-color: rgb(42, 42, 113);
-  border-width: 1px;
-  background-color: transparent;
 }
 
 .page nav{
@@ -45,9 +32,8 @@ nav{
   border-top: none;
   border-left: none;
   border-right: none;
-  border-color: rgb(42, 42, 113);
   border-width: 1px;
-  background-color: rgb(42, 42, 113);
+  background-color: white;
 }
 
 nav button{
@@ -56,19 +42,39 @@ nav button{
   background-color: rgb(42, 42, 113);
 }
 
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: rgb(42, 42, 113);
+  color: white;
+  border-width: 1px;
+  background-color: rgb(4, 33, 77);
+}
+
+nav button{
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  background-color: white;
+  color: rgb(4, 33, 77);
+  font-weight: bold;
+}
+
 nav .logo{
   display: flex;
   gap: 0.5rem;
 }
 
 nav .logo img{
-  width: 3rem;
+  width: 50%;
+  border-style: solid;
+  border-color: yellow;
+  padding: 2px;
 }
-
-.page nav .logo img{
-  width: 8rem;
-}
-
 nav .logo p{
   font-size: 12.5px;
   font-weight: bold;
@@ -76,13 +82,17 @@ nav .logo p{
 }
 
 button{
-  padding: 0.5rem 1rem;
-  background-color: rgb(42, 42, 113);
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(4, 33, 77);
   border-style: solid;
   border-color: white;
   color: white;
   border-radius: 5px;
   border-width: 1px;
+}
+
+.page h2{
+  color: white;
 }
 
 h2{
@@ -115,8 +125,15 @@ input{
   border-radius: 5px;
   border-color: transparent;
   height: 2.5rem;
-  background-color: rgba(42, 42, 113, 0.152);
+  background-color: rgba(255, 255, 255, 0.196);
   color: white;
+}
+
+.page nav .logo img{
+  width: 50%;
+  border-style: solid;
+  
+  padding: 2px;
 }
 
 select{
@@ -140,7 +157,7 @@ input, textarea {
   box-sizing: border-box;
   border-radius: 5px;
   border-color: transparent;
-  background-color: rgba(42, 42, 113, 0.152);
+  background-color: rgba(255, 255, 255, 0.152);
 }
 
 textarea {
@@ -510,7 +527,7 @@ h4{
 
 .bank{
   color: #edf0ff;
-  background: linear-gradient(200deg, rgb(42, 42, 113) 0.9%, rgb(0, 5, 14) 99.96%);
+  background: linear-gradient(200deg, rgb(9, 197, 106) 0.9%, rgb(5, 112, 55) 99.96%);
   padding: 1.5rem 1rem;
 }
 
@@ -527,15 +544,15 @@ h4{
 }
 
 .extraleg p{
-  color: rgb(42, 42, 113);
+  color: white;
   padding: 0.5rem 2rem;
   letter-spacing: 0.2rem;
 }
 
 footer{
-  background: linear-gradient(200deg, rgb(72, 72, 154) 0.9%, rgb(42, 42, 113) 99.96%);
+   background-color: white;
   padding: 2rem;
-  color: rgb(185, 185, 222);
+  color:  rgb(5, 112, 55);
 }
 
 .page footer nav{

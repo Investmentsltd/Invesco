@@ -13,7 +13,7 @@ body{
   text-align: center;
   font-size: 12px;
   background-color: rgb(230, 230, 230);
-  color: black;
+  color: rgb(4, 33, 77);
   padding: 0.5rem 1.5rem;
   display: flex;
   gap: 0rem;
@@ -27,7 +27,7 @@ body{
 nav{
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-style: solid;
   border-top: none;
   border-left: none;
@@ -35,12 +35,15 @@ nav{
   border-color: rgb(42, 42, 113);
   color: white;
   border-width: 1px;
+  background-color: rgb(4, 33, 77);
 }
 
 nav button{
   padding: 0.5rem 1.5rem;
-  border-radius: 0px;
-  background-color: rgb(42, 42, 113);
+  border-radius: 6px;
+  background-color: white;
+  color: rgb(4, 33, 77);
+  font-weight: bold;
 }
 
 nav .logo{
@@ -49,7 +52,10 @@ nav .logo{
 }
 
 nav .logo img{
-  width: 3rem;
+  width: 50%;
+  border-style: solid;
+  border-color: yellow;
+  padding: 2px;
 }
 nav .logo p{
   font-size: 12.5px;
@@ -65,15 +71,33 @@ nav .logo p{
 
 .container{
   padding: 1rem;
-  background: linear-gradient(200deg, rgb(191, 52, 52) 0.9%, rgb(144, 21, 21) 15.9%, rgb(133, 1, 1) 10.9%, rgb(144, 21, 21) 35.9%, rgb(133, 1, 1) 0.96%);
+  background: linear-gradient(200deg, rgb(6, 93, 224) 0.9%, rgb(4, 33, 77) 99.96%);
   color: white;
 }
 
 button{
-  padding: 0.5rem 1rem;
-  background-color: rgb(42, 42, 113);
+  padding: 0.5rem 1.5rem;
+  background-color: white;
   border-style: solid;
   border-color: white;
+  color: rgb(4, 33, 77);
+  border-radius: 5px;
+  border-width: 1px;
+  font-weight: bold;
+}
+
+.create{
+  padding: 1rem;
+  background-color: white;
+  color:  rgb(4, 33, 77);
+  border-radius: 6px;
+}
+
+.create button{
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(6, 93, 224);
+  border-style: solid;
+  border-color: rgb(6, 93, 224);
   color: white;
   border-radius: 5px;
   border-width: 1px;
@@ -236,7 +260,7 @@ button{
 }
 
 .container5 .logo img{
-  width: 3rem;
+  width: 50%;
 }
 .container5 .logo p{
   font-size: 12.5px;
@@ -254,7 +278,7 @@ button{
 
 @media  screen and (min-width: 350px) and (max-width: 850px){
   .container5 img{
-    width: 40%;
+    width: 70%;
   }
 
   .container5{
@@ -405,8 +429,8 @@ button{
 
 h2{
   padding: 1rem;
-  text-align: center;
-  color: #4CAF50;
+  text-align: left;
+  color: white;
 }
 
 .content2 .containerer{

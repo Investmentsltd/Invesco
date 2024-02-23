@@ -12,12 +12,11 @@ body{
 .subnav{
   text-align: center;
   font-size: 12px;
-
-  background-color: rgb(0, 78, 162);
-  color: white;
+  background-color: rgb(230, 230, 230);
+  color: rgb(4, 33, 77);
   padding: 0.5rem 1.5rem;
   display: flex;
-  gap: 5rem;
+  gap: 0rem;
   font-size: 70%;
 }
 
@@ -28,19 +27,23 @@ body{
 nav{
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-style: solid;
   border-top: none;
   border-left: none;
   border-right: none;
   border-color: rgb(42, 42, 113);
+  color: white;
   border-width: 1px;
+  background-color: rgb(4, 33, 77);
 }
 
 nav button{
   padding: 0.5rem 1.5rem;
-  border-radius: 0px;
-  background-color: rgb(42, 42, 113);
+  border-radius: 6px;
+  background-color: white;
+  color: rgb(4, 33, 77);
+  font-weight: bold;
 }
 
 nav .logo{
@@ -49,7 +52,10 @@ nav .logo{
 }
 
 nav .logo img{
-  width: 3rem;
+  width: 50%;
+  border-style: solid;
+  border-color: yellow;
+  padding: 2px;
 }
 nav .logo p{
   font-size: 12.5px;
@@ -58,8 +64,8 @@ nav .logo p{
 }
 
 button{
-  padding: 0.5rem 1rem;
-  background-color: rgb(42, 42, 113);
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(4, 33, 77);
   border-style: solid;
   border-color: white;
   color: white;
@@ -75,12 +81,12 @@ button{
 
 form{
   border-style: solid;
-  border-color: rgb(42, 42, 113);
+  border-color: rgb(4, 33, 77);
   border-width: 2px;
   width: 100%;
   padding: 4rem 2rem;
   border-radius: 5px;
-  color: rgb(42, 42, 113);
+  color:  rgb(4, 33, 77)
 }
 
 
@@ -88,8 +94,8 @@ form input{
   width: 60%;
   border-radius: 5px;
   border-color: transparent;
-  height: 2.5rem;
-  background-color: rgba(42, 42, 113, 0.152);
+  height: 3rem;
+  background-color:  rgba(4, 33, 77, 0.094);
 }
 
 @media  screen and (min-width: 350px) and (max-width: 850px){
@@ -114,8 +120,9 @@ form input{
   gap: 0.5rem;
 }
 
+
 .container5 .logo img{
-  width: 3rem;
+  width: 50%;
 }
 .container5 .logo p{
   font-size: 12.5px;
